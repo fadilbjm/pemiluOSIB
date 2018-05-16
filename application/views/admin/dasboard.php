@@ -35,6 +35,11 @@
                   </div>
               </div>
           </nav>
+<!-- akhir navbar -->
+
+        <!-- text center -->
+        
+
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
