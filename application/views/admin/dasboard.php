@@ -20,7 +20,7 @@
               </button>
               <div class="collapse navbar-collapse" id="collapsibleNavId">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                      
+                      <li><marquee behavior="slide" direction="left"><div color="white">Boarding Election Page</div></marquee></li>
                   </ul>
                   <div class="dropdown open">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
@@ -38,9 +38,51 @@
 <!-- akhir navbar -->
 
         <!-- text center -->
+        <div class="text-center">
+            <div class="jumbotron">
+                <div class="text-center">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Data Siswa</h4>
+                                    <h2><p class="card-text">20</p></h2>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Tambah/Edit/Hapus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Data Siswi</h4>
+                                    <h2><p class="card-text">20</p></h2>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Tambah/Edit/Hapus</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Jumlah Suara</h4>
+                                    <h2><p class="card-text">40</p></h2>
+                                </div>
+                                <div class="card-body">
+                                    <a href="#" class="card-link">Lihat</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         
-
+        </div>
+        <!-- end of text center -->
       </div>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
