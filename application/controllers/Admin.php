@@ -20,7 +20,7 @@ class Admin extends CI_Controller {
     {
         $this->load->model('m_arh');
         $data['siswa']=$this->m_arh->getSiswa()->num_rows();
-        // $data['siswi']=$this->m_arh->getSiswa()->num_rows();
+        $data['siswi']=$this->m_arh->getSiswa()->num_rows();
         $this->load->view('admin/dasboard',$data);        
     }
 
