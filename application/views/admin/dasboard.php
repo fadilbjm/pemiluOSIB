@@ -51,7 +51,7 @@
                                     ?></p></h2>
                                 </div>
                                 <div class="card-body">
-                                    <a href="#" class="card-link">Tambah/Edit/Hapus</a>
+                                    <a href="<?php echo base_url('admin/add/l');?>" class="card-link">Tambah/Edit/Hapus</a>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                     <h2><p class="card-text"><?php echo $siswi;?></p></h2>
                                 </div>
                                 <div class="card-body">
-                                    <a href="#" class="card-link">Tambah/Edit/Hapus</a>
+                                    <a href="<?php echo base_url('admin/add/p');?>" class="card-link">Tambah/Edit/Hapus</a>
                                 </div>
                             </div>
                         </div>
