@@ -2,16 +2,16 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Models extends CI_Model {
+class M_arh extends CI_Model {
 
     function getSiswa()
     {
-        return $query=$this->db->where('t_siswa', array('jk'=>'l'));
+        return $query=$this->db->get_where('t_siswa', array('jk'=>'l'));
         
     }
     function getSiswi()
     {
-        return $query=$this->db->where('t_siswa', array('jk'=>'p'));
+        return $query=$this->db->get_where('t_siswa', array('jk'=>'p'));
         
     }
 

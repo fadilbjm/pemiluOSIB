@@ -46,7 +46,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h4 class="card-title"><ion-icon name="person"></ion-icon>Data Siswa</h4>
-                                    <h2><p class="card-text">20</p></h2>
+                                    <h2><p class="card-text"><?php 
+                                    echo $siswa;
+                                    ?></p></h2>
                                 </div>
                                 <div class="card-body">
                                     <a href="#" class="card-link">Tambah/Edit/Hapus</a>

@@ -18,8 +18,9 @@ class Admin extends CI_Controller {
 
     function index()
     {
-        $data['siswa']=$this->models->getSiswa();
-        $data['siswi']=$this->models->getSiswa();
+        $this->load->model('m_arh');
+        $data['siswa']=$this->m_arh->getSiswa()->num_rows();
+        // $data['siswi']=$this->m_arh->getSiswa()->num_rows();
         $this->load->view('admin/dasboard',$data);        
     }
 
