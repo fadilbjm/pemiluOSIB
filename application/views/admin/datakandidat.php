@@ -81,7 +81,7 @@
                           </thead>
                           <tbody class="text-center">
                           <?php
-                              if ($datak->num_rows()>0) {
+                              if ($dataw->num_rows()>0) {
                                   foreach ($dataw as $ket ) {
                                         echo "<tr>
                                             <td>$ket->nama_kandidat</td>
