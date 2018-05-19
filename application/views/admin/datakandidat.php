@@ -19,7 +19,7 @@
               </button>
               <div class="collapse navbar-collapse" id="collapsibleNavId">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                      <li><marquee behavior="slide" direction="left"><div color="white">Boarding Students Page</div></marquee></li>
+                      <li><marquee behavior="slide" direction="left"><div color="white">Boarding Candidates Page</div></marquee></li>
                   </ul>
                   <div class="dropdown open">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
