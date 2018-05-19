@@ -4,6 +4,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_arh extends CI_Model {
 
+    function id()
+    {
+        $query=$this->db->get('t_siswa');
+        return $query;
+    }
+
     function get($data)
     {
         $where = array('jk' => $data);
