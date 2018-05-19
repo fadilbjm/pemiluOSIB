@@ -57,9 +57,10 @@ class Admin extends CI_Controller {
 
     function addCandidate()
     {
+        $id=date("ymdhis");
         $url=$this->foto();
         $data=array(
-            'id_kandidat'=> $this->input->post('id'),
+            'id_kandidat'=> $id,
             'nama_kandidat'=>$this->input->post('nama'),
             'posisi'    =>  $this->input->post('posisi'),
             'foto'  => $url,
@@ -75,11 +76,26 @@ class Admin extends CI_Controller {
     {
         $tipe=explode(".",$_FILES['img']['name']);
         $tipe=$tipe[count($tipe)-1];
-        $url="./aset/img/kandidat/".uniqid(rand()).'.'.$tipe;
+        $url="aset/img/kandidat/".uniqid(rand()).'.'.$tipe;
         if (is_uploaded_file($_FILES['img']['tmp_name'])) 
             if(move_uploaded_file($_FILES['img']['tmp_name'],$url))
             return $url;
         return "";
+        
+    }
+
+    function delCandidate()
+    {
+        $id=$this->uri->segment(3);
+        $data['1']=$this->m_arh->delCan($id)->result();
+        foreach ($data['1'] as $key ) {
+            unlink($key->foto);
+
+        }
+        $this->db->delete('t_kandidat',array('id_kandidat'=>$id));
+        
+        redirect('admin/Candidate');
+        
         
     }
 }

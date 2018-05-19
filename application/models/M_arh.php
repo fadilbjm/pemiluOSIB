@@ -39,6 +39,12 @@ class M_arh extends CI_Model {
         return $query = $this->db->get_where('t_kandidat',$where);
     }
 
+    function delCan($id)
+    {
+        $where=array('id_kandidat'=>$id);
+        return $query=$this->db->get_where('t_kandidat',$where);
+    }
+
 }
 
 /* End of file Models.php */

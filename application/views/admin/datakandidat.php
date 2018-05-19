@@ -37,28 +37,28 @@
 <!-- akhir navbar -->
           <div class="row">
             <div class="col-md-12">
-                <button type="button" class="btn btn-outline-success btn-md form-control" data-toggle="modal" data-target="#modelId">
+                <button type="button" class="btn btn-outline-success btn-md form-control" data-toggle="modal" data-target="#tambah">
                       <ion-icon name="add-circle"></ion-icon>Tambah
                     </button>
             </div>
               <div class="col-md-6">
                   <div class="jumbotron">
                       <table class="table">
-                          <thead>
+                          <thead class="text-center">
                               <tr>
                                   <th>Nama Ketua</th>
                                   <th>Foto</th>
                                   <th>Opsi</th>
                               </tr>
                           </thead>
-                          <tbody class="text-center">
+                          <tbody class="text-center text-uppercase">
                               <?php
                               if ($datak->num_rows()>0) {
-                                  foreach ($datak as $ket ) {
+                                  foreach ($datak->result() as $ket ) {
                                         echo "<tr>
                                             <td>$ket->nama_kandidat</td>
-                                            <td><img src='$ket->foto' width='40px' height='40px'></td>
-                                            <td>".anchor(base_url('admin/delCandidate/'.$ket->id_kandidat), 'Hapus', '<ion-icon name="backspace"></ion-icon>')."</td>
+                                            <td><img src='".base_url($ket->foto)."' width='40px' height='40px'></td>
+                                            <td>".anchor(base_url('admin/delCandidate/'.$ket->id_kandidat), '<button class="btn btn-danger"><ion-icon name="backspace"></ion-icon></button>')."</td>
                                         </tr>";
                                   }
                               }else {
@@ -71,18 +71,18 @@
               </div>
               <div class="col-md-6">
                   <div class="jumbotron">
-                      <table class="table">
-                          <thead>
+                      <table class="table" >
+                          <thead class="text-center">
                               <tr>
                                   <th>Nama Wakil</th>
                                   <th>Foto</th>
                                   <th>Opsi</th>
                               </tr>
                           </thead>
-                          <tbody class="text-center">
+                          <tbody class="text-center text-uppercase">
                           <?php
                               if ($dataw->num_rows()>0) {
-                                  foreach ($dataw as $ket ) {
+                                  foreach ($dataw->result() as $ket ) {
                                         echo "<tr>
                                             <td>$ket->nama_kandidat</td>
                                             <td><img src='$ket->foto' width='40px' height='40px'></td>
@@ -99,6 +99,62 @@
               </div>
           </div>
       </div>
+      <!-- Modal tambah -->
+    <div class="modal fade" id="tambah" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                                </div>
+                                <?php echo form_open_multipart('admin/addCandidate');?>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                      <label for="nama">Nama Kandidat</label>
+                                      <input type="text"
+                                        class="form-control" name="nama" id="nama" aria-describedby="helpId" placeholder="">
+                                    </div>
+                                    <label for="jk">Jenis Kelamin</label>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="jk" id="jk" value="l" checked>
+                                        Laki-laki
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="jk" id="jk" value="p" >
+                                        Perempuan
+                                      </label>
+                                    </div>
+                                    <label for="posisi">Jabatan</label>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="posisi" id="posisi" value="ketua" checked>
+                                        Ketua
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                        <input type="radio" class="form-check-input" name="posisi" id="posisi" value="wakil" >
+                                        Wakil Ketua
+                                      </label>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="img">Foto</label>
+                                      <input type="file"
+                                        class="form-control" name="img" id="img" aria-describedby="helpId" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <?php echo form_close();?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
