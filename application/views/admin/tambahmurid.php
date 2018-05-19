@@ -40,75 +40,14 @@
             <div class="col-md-2">
                 <div class="jumbotron">
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#modelId">
+                    <button type="button" class="btn btn-outline-success btn-md" data-toggle="modal" data-target="#modelId">
                       <ion-icon name="add-circle"></ion-icon>Tambah
                     </button>
-                    
-                    <!-- Modal tambah -->
-                    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                                </div>
-                                <?php echo form_open('admin/add_action');?>
-                                <?php
-                                if ($id->num_rows()==0) {
-                                    echo "<input type='hidden' name='id' value='1'>";
-                                }else{
-                                    $ii=$id->num_rows()+1;
-                                    echo "<input type='hidden' name='id' value='$ii'>";
-                                }
-                                ?>
-                                <div class="modal-body">
-                                    <div class="form-group">
-                                      <label for="nib">NIB</label>
-                                      <input type="text" class="form-control" name="nib" id="nib" aria-describedby="helpId" placeholder="Nomor Induk">
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="nama">Nama Lengkap</label>
-                                      <input type="text" class="form-control" name="nama" id="nama" aria-describedby="helpId" placeholder="Nama">
-                                    </div>
-                                    <label for="jk">Jenis Kelamin</label>
-                                    <div class="custom-control custom-radio">
-                                    <input type="radio" id="customRadio1" name="jk" class="custom-control-input" value="L">
-                                        <label class="custom-control-label" for="customRadio1">Laki-laki</label>
-                                    </div>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio2" name="jk" class="custom-control-input" value="P">
-                                        <label class="custom-control-label" for="customRadio2">Perempuan</label>
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="angkatan">Tahun Angkatan</label>
-                                      <input type="number"
-                                        class="form-control" name="angkatan" id="angkatan" aria-describedby="helpId" placeholder="">
-                                    </div>  
-                                    <label for="jenjang">Jenjang</label>
-                                    <div class="custom-control custom-radio">
-                                            <input type="radio" id="smp" name="jenjang" class="custom-control-input">
-                                            <label class="custom-control-label" for="smp">SMP</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input type="radio" id="sma" name="jenjang" class="custom-control-input">
-                                            <label class="custom-control-label" for="sma">SMA</label>
-                                        </div>                                 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
-                                    <button type="submit" class="btn btn-primary">Save</button>
-                                </div>
-                                <?php echo 
-                                form_close();
-                                ?>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-md-10">
                 <div class="jumbotron">
+                <a href="<?php echo base_url();?>"><button type="button" class="btn btn-link">< Kembali</button></a>
                     <table class="table table-responsive" id="mydata">
                         <thead class="thead-dark text-center">
                             <tr>
@@ -152,6 +91,67 @@
                     </table>
                 </div>
             </div>
+             <!-- Modal tambah -->
+             <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                                </div>
+                                <?php echo form_open('admin/add_action');?>
+                                <?php
+                                if ($id->num_rows()==0) {
+                                    echo "<input type='hidden' name='id' value='1'>";
+                                }else{
+                                    $ii=$id->num_rows()+1;
+                                    echo "<input type='hidden' name='id' value='$ii'>";
+                                }
+                                ?>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                      <label for="nib">NIB</label>
+                                      <input type="text" class="form-control" name="nib" id="nib" aria-describedby="helpId" placeholder="Nomor Induk">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="nama">Nama Lengkap</label>
+                                      <input type="text" class="form-control" name="nama" id="nama" aria-describedby="helpId" placeholder="Nama">
+                                    </div>
+                                    <label for="jk">Jenis Kelamin</label>
+                                    <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio1" name="jk" class="custom-control-input" value="L">
+                                        <label class="custom-control-label" for="customRadio1">Laki-laki</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="jk" class="custom-control-input" value="P">
+                                        <label class="custom-control-label" for="customRadio2">Perempuan</label>
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="angkatan">Tahun Angkatan</label>
+                                      <input type="number"
+                                        class="form-control" name="angkatan" id="angkatan" aria-describedby="helpId" placeholder="">
+                                    </div>  
+                                    <label for="jenjang">Jenjang</label>
+                                    <div class="custom-control custom-radio">
+                                            <input type="radio" id="smp" name="jenjang" class="custom-control-input" value="smp">
+                                            <label class="custom-control-label" for="smp">SMP</label>
+                                        </div>
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="sma" name="jenjang" class="custom-control-input" value="sma">
+                                            <label class="custom-control-label" for="sma">SMA</label>
+                                        </div>                                 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                                <?php echo 
+                                form_close();
+                                ?>
+                            </div>
+                        </div>
+                    </div>
             <!-- Modal edit -->
             <div class="modal fade" id="modeledit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                         <div class="modal-dialog" role="document">

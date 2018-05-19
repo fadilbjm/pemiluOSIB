@@ -47,6 +47,41 @@ class Admin extends CI_Controller {
     
     }
 
+    public function candidate()
+    {
+        $data['datak']=$this->m_arh->getHead(); // untuk kandidat ketua
+        $data['dataw']=$this->m_arh->getVice(); // untuk kandidat wakil
+        $this->load->view('admin/datakandidat', $data);
+        
+    }
+
+    function addCandidate()
+    {
+        $url=$this->foto();
+        $data=array(
+            'id_kandidat'=> $this->input->post('id'),
+            'nama_kandidat'=>$this->input->post('nama'),
+            'posisi'    =>  $this->input->post('posisi'),
+            'foto'  => $url,
+            'jk'    =>  $this->input->post('jk')
+        );
+        $this->db->insert('t_kandidat', $data);
+        
+        redirect('admin/candidate');
+        
+    }
+
+    private function foto()
+    {
+        $tipe=explode(".",$_FILES['img']['name']);
+        $tipe=$tipe[count($tipe)-1];
+        $url="./aset/img/kandidat/".uniqid(rand()).'.'.$tipe;
+        if (is_uploaded_file($_FILES['img']['tmp_name'])) 
+            if(move_uploaded_file($_FILES['img']['tmp_name'],$url))
+            return $url;
+        return "";
+        
+    }
 }
 
 /* End of file Admin.php */

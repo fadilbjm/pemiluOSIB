@@ -76,7 +76,20 @@
                                     <a href="#" class="card-link">Lihat</a>
                                 </div>
                             </div>
-                        </div>
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Data Kandidat</h4>
+                                    <h2><p class="card-text"><ion-icon name="contacts"></ion-icon></p></h2>
+                                </div>
+                                <div class="card-body">
+                                    <a href="<?php echo base_url('admin/candidate');?>" class="card-link">Tambah/Edit/Hapus</a>
+                                </div>
+                            </div>
+                        </div> 
                     </div>
                 </div>
             </div>

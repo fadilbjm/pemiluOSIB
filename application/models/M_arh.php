@@ -27,6 +27,18 @@ class M_arh extends CI_Model {
         
     }
 
+    function getHead()
+    {
+        $where=array('posisi'=>"ketua");
+        return $query = $this->db->get_where('t_kandidat',$where);
+    }
+
+    function getVice()
+    {
+        $where=array('posisi'=>"wakil");
+        return $query = $this->db->get_where('t_kandidat',$where);
+    }
+
 }
 
 /* End of file Models.php */
