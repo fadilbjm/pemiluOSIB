@@ -13,7 +13,7 @@
   <body>
   <div class="container">
           <nav class="navbar navbar-expand-md navbar-dark bg-info">
-              <a class="navbar-brand" href="#"><img src="https://pbs.twimg.com/profile_images/1657882683/Logo_ARH_400x400.jpg" alt="" srcset="" width="30px" height="30px"></a>
+              <a class="navbar-brand" href="<?php echo base_url();?>"><img src="https://pbs.twimg.com/profile_images/1657882683/Logo_ARH_400x400.jpg" alt="" srcset="" width="30px" height="30px"></a>
               <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                   aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -73,13 +73,30 @@
                                             <td>$row->angkatan</td>
                                             <td>$row->jenjang</td>
                                             <td>
-                                            <button type='button' class='btn btn-warning btn-xs' data-toggle='modal' data-target='#modeledit'>
-                                                <ion-icon name='brush'></ion-icon>
-                                            </button></td>
-                                            <td>
-                                            <button type='button' class='btn btn-danger btn-xs' data-toggle='modal' data-target='#modelhapus'>
+                                            <button type='button' class='btn btn-outline-danger btn-xs' data-toggle='modal' data-target='#modelhapus'>
                                                 <ion-icon name='backspace'></ion-icon>
-                                            </button></td>
+                                            </button>
+                                            <!-- Modal hapus -->
+    <div class='modal fade' id='modelhapus' tabindex='-1' role='dialog' aria-labelledby='modelTitleId' aria-hidden='true'>
+                        <div class='modal-dialog' role='document'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                              <span aria-hidden='true'>&times;</span>
+                            </button>
+                                </div>
+                                <div class='modal-body'>
+                                    <h2>Confirmation</h2>
+                                    Yakin menghapus $row->nama?
+                                </div>
+                                <div class='modal-footer'>
+                                    <button type='button' class='btn btn-info' data-dismiss='modal'>Cancel</button>
+                                    ".anchor(base_url('admin/delStudent/'.$this->uri->segment(3).'/'.$row->nib), '<button type="button" class="btn btn-warning">Confirm</button>')."
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                            </td>
                                         </tr>";
                                     }
                                 } else{
@@ -152,43 +169,24 @@
                             </div>
                         </div>
                     </div>
-            <!-- Modal edit -->
-            <div class="modal fade" id="modeledit" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                                </div>
-                                <div class="modal-body">
-                                    Body edit
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save</button>
-                                </div>
-                            </div>
-                        </div>
-            </div>
         </div>
 
     </div>
     <!-- Modal hapus -->
-    <div class="modal fade" id="modelhapus" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
+    <div class='modal fade' id='modelhapus' tabindex='-1' role='dialog' aria-labelledby='modelTitleId' aria-hidden='true'>
+                        <div class='modal-dialog' role='document'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                              <span aria-hidden='true'>&times;</span>
                             </button>
                                 </div>
-                                <div class="modal-body">
+                                <div class='modal-body'>
                                     Body
                                 </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Save</button>
+                                <div class='modal-footer'>
+                                    <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
+                                    <button type='button' class='btn btn-primary'>Save</button>
                                 </div>
                             </div>
                         </div>

@@ -98,6 +98,17 @@ class Admin extends CI_Controller {
         
         
     }
+
+    function delStudent()
+    {
+        $id=$this->uri->segment(4);
+        $url=$this->uri->segment(3);
+         
+        $this->db->delete('t_siswa',array('nib'=>$id));
+        
+        redirect('admin/add/'.$url);
+        
+    }
 }
 
 /* End of file Admin.php */
