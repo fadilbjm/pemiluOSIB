@@ -73,7 +73,7 @@
                                     <h2><p class="card-text">40</p></h2>
                                 </div>
                                 <div class="card-body">
-                                    <a href="#" class="card-link">Lihat</a>
+                                    <a href="<?php echo base_url('admin/stats');?>" class="card-link">Lihat</a>
                                 </div>
                             </div>
                         </div>                        

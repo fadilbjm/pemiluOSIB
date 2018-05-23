@@ -109,6 +109,12 @@ class Admin extends CI_Controller {
         redirect('admin/add/'.$url);
         
     }
+
+    function stats()
+    {
+        $this->load->view('admin/stats');
+        
+    }
 }
 
 /* End of file Admin.php */
