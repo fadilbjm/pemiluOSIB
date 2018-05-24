@@ -35,7 +35,16 @@
               </div>
           </nav>
 <!-- akhir navbar -->
-<div id="kontainer" style="width:100%; height:400px;"></div>
+<div class="row">
+    <div class="col-md-6">
+        <div id="kontainer" style="width:100%; height:400px;"></div>
+    </div>
+    <div class="col-md-6">
+        <div id="kontainer1" style="width:100%; height:400px;"></div>
+    </div>
+</div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -50,10 +59,29 @@
             type: 'column'
         },
         title: {
-            text: 'Statistik Hasil Pemilihan'
+            text: 'Statistik Hasil Pemilihan Putra'
         },
         xAxis: {
-            categories: ['Putra', 'Putri']
+            categories: ['Putra']
+        },
+        yAxis: {
+            title: {
+                text: 'Jumlah Suara'
+            }
+        },
+        series: <?php echo json_encode($data1);?>
+    });
+});
+$(function () { 
+    var myChart = Highcharts.chart('kontainer1', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Statistik Hasil Pemilihan Putri'
+        },
+        xAxis: {
+            categories: ['Putri']
         },
         yAxis: {
             title: {
@@ -62,10 +90,13 @@
         },
         series: [{
             name: 'Jane',
-            data: [25,0]
+            data: [25]
         }, {
             name: 'John',
-            data: [20, 46]
+            data: [20]
+        },{
+            name: 'June',
+            data: [30]
         }]
     });
 });

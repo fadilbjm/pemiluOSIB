@@ -112,7 +112,12 @@ class Admin extends CI_Controller {
 
     function stats()
     {
-        $this->load->view('admin/stats');
+
+        $data['data']=$this->m_arh->pemilu()->result();
+        $data['data1']=$this->m_arh->kanl()->result();
+        
+        // echo json_encode($data['data1']);
+        $this->load->view('admin/stats',$data);
         
     }
 }

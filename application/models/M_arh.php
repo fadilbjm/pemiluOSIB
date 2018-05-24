@@ -45,6 +45,21 @@ class M_arh extends CI_Model {
         return $query=$this->db->get_where('t_kandidat',$where);
     }
 
+    function pemilu()
+    {
+        
+        return $query=$this->db->get('t_pemilu');
+    }
+
+    function kanl()
+    {
+         return $query=$this->db->query('SELECT name FROM t_kandidat WHERE "jk"="p"');
+    }
+    function kanp()
+    {
+         return $query=$this->db->query('SELECT name FROM t_kandidat WHERE "jk"="p"');
+    }
+
 }
 
 /* End of file Models.php */
